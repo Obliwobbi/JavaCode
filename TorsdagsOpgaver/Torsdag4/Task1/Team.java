@@ -5,13 +5,12 @@ class Team {
 	//Task 1.c, 1.d & 1.e
 	private String teamName;
 	private int teamRank;
-	private ArrayList<String> teamMembers;
+	private ArrayList<String> teamMembers = new ArrayList<>();
 
 	Team (String teamName){
 
 		this.teamName = teamName;
-		teamMembers.add(teamName);
-
+		
 	}
 
 	//1.h
@@ -21,10 +20,24 @@ class Team {
 
 	}
 
-	public void toString(){
+	public void addPlayer(String teamMember){
 
-		System.out.println("Hold: "+teamName+" Rang: "+teamRank);
+		teamMembers.add(teamMember);
 
+	}
+
+	//1.j
+	@Override
+	public String toString(){
+
+		String s = ("Hold: "+teamName+", Rang: "+teamRank+"\n");
+
+		for (String m : teamMembers){
+			s += m + "\n";
+		}
+		
+		
+		return s;
 	}
 
 }
