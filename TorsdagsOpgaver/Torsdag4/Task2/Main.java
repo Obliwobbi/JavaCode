@@ -10,7 +10,15 @@ class Main{
 		String name = scanner.nextLine();
 
 		System.out.print("Hello "+name+"!\nPlease type your age: ");
-		int age = scanner.nextInt();
+		String tmpAge = scanner.nextLine();
+
+		int age;
+
+		try {
+			age = Integer.parseInt(tmpAge);
+		} catch (NumberFormatException e){
+			System.out.println(e.getMessage()+ " - Expected a number as age."
+		}
 
 		System.out.println("You are "+age+" years old.");
 
